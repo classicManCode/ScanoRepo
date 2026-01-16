@@ -7,9 +7,7 @@ import { logger } from "../utils/logger";
 dotenv.config({ path: path.join(__dirname, "../../.env") });
 
 // ⚠️ YOUR PROXY SERVER URL (e.g. your Vercel deployment URL)
-const PROXY_SERVER_URL =
-  process.env.SCANO_REPO_PROXY_URL ||
-  "https://your-scanorepo-api.vercel.app/api/explain";
+const PROXY_SERVER_URL = "https://scano-repo.vercel.app/api/explain";
 
 /**
  * Generate an AI explanation by calling a secure proxy server.

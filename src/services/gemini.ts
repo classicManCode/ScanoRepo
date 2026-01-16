@@ -18,10 +18,12 @@ export const generateExplanation = async (prompt: string): Promise<string> => {
   if (!client) return "AI features disabled: Missing API Key.";
 
   try {
-    const model = client.getGenerativeModel({ model: "gemini-1.5-flash" });
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    return response.text();
+    const result = await client.models.generateContent({
+      model: "gemini-1.5-flash",
+      contents: prompt,
+    });
+    // The new SDK exposes text as a getter property, not a method
+    return result.text || "No explanation generated.";
   } catch (error) {
     logger.error(`Gemini API Error: ${(error as any).message}`);
     return "Failed to generate AI explanation.";

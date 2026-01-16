@@ -63,4 +63,6 @@ export const depsCommand = new Command("deps")
     } catch (e) {
       logger.error(`Failed to run command: ${(e as any).message}`);
     }
+
+    logger.footer();
   });

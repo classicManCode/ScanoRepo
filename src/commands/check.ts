@@ -15,4 +15,6 @@ export const checkCommand = new Command("check")
     await runDoc();
 
     logger.success("\nFull check complete!");
+
+    logger.footer();
   });

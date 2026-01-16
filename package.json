@@ -6,6 +6,35 @@
   "bin": {
     "scanorepo": "./dist/index.js"
   },
+  "author": "Benjamin Onyia <classicManCode>",
+  "license": "MIT",
+  "keywords": [
+    "cli",
+    "ai",
+    "scanner",
+    "documentation",
+    "groq",
+    "typescript",
+    "nodejs",
+    "developer-tools",
+    "code-analysis"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/classicManCode/ScanoRepo.git"
+  },
+  "homepage": "https://github.com/classicManCode/ScanoRepo#readme",
+  "bugs": {
+    "url": "https://github.com/classicManCode/ScanoRepo/issues"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",

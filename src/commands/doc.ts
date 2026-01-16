@@ -36,6 +36,8 @@ export const runDoc = async () => {
     spinner.fail("Documentation generation failed.");
     logger.error((error as any).message);
   }
+
+  logger.footer();
 };
 
 export const docCommand = new Command("doc")

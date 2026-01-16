@@ -72,6 +72,8 @@ export const runScan = async () => {
     spinner.fail("Scan failed.");
     logger.error((error as any).message);
   }
+
+  logger.footer();
 };
 
 export const scanCommand = new Command("scan")

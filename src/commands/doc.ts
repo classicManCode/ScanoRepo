@@ -1,6 +1,6 @@
 import { Command } from "commander";
 import { summarizeProject } from "../services/summarizer";
-import { generateExplanation } from "../services/gemini";
+import { generateExplanation } from "../services/ai";
 import { logger } from "../utils/logger";
 import ora from "ora";
 import fs from "fs";

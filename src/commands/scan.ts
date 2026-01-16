@@ -1,6 +1,6 @@
 import { Command } from "commander";
 import { scanProject } from "../services/scanner";
-import { generateExplanation } from "../services/gemini";
+import { generateExplanation } from "../services/ai";
 import { logger } from "../utils/logger";
 import ora from "ora";
 import path from "path";
@@ -24,14 +24,14 @@ export const runScan = async () => {
     const explain = async (
       title: string,
       items: string[],
-      promptContext: string
+      promptContext: string,
     ) => {
       if (items.length > 0) {
         logger.warn(`\n[!] ${title}:`);
         items.forEach((item) => logger.general(` - ${item}`));
 
         const prompt = `Explain why these ${promptContext} are important in a Node.js project: ${items.join(
-          ", "
+          ", ",
         )}. Keep it brief.`;
         const aiExplanation = await generateExplanation(prompt);
         logger.info(`\nAI Insight:\n${aiExplanation}\n`);
@@ -42,7 +42,7 @@ export const runScan = async () => {
     await explain(
       "Environment Issues",
       issues.missingEnvVars,
-      "env configurations"
+      "env configurations",
     );
 
     if (issues.missingDeps.length > 0) {
@@ -52,10 +52,10 @@ export const runScan = async () => {
 
     if (issues.typescriptError) {
       logger.error(
-        `\n[!] TypeScript Config Missing: Found .ts files but no tsconfig.json.`
+        `\n[!] TypeScript Config Missing: Found .ts files but no tsconfig.json.`,
       );
       const aiExplanation = await generateExplanation(
-        "Why is tsconfig.json required for TypeScript projects?"
+        "Why is tsconfig.json required for TypeScript projects?",
       );
       logger.info(`\nAI Insight:\n${aiExplanation}\n`);
     }

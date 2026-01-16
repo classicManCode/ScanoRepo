@@ -9,6 +9,7 @@ import { checkCommand } from "./commands/check";
 import { checkForUpdates } from "./services/updater";
 import packageJson from "../package.json";
 
+// Display ASCII banner
 console.log(figlet.textSync("ScanoRepo"));
 
 const program = new Command();

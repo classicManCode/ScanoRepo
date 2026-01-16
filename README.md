@@ -1,28 +1,24 @@
-# 🔍 ScanoRepo
+# ScanoRepo
 
-> **AI-powered CLI tool for instant project scanning and documentation generation.**
+> **AI-powered CLI tool for project scanning and documentation generation.**
 
-ScanoRepo is a cross-platform command-line tool built with Node.js and TypeScript that scans your JavaScript/TypeScript projects for common issues and generates documentation using AI-powered insights.
-
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Node](https://img.shields.io/badge/node-%3E%3D16.0.0-green.svg)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.3-blue.svg)
+ScanoRepo is a cross-platform command-line utility built with Node.js and TypeScript. It is designed to audit JavaScript and TypeScript repositories for configuration issues and generate comprehensive project documentation using AI-driven insights.
 
 ---
 
-## ✨ Features
+## Features
 
-- **🔎 Project Scanning** - Detects missing npm scripts, environment variables, dependencies, and TypeScript configuration issues.
-- **🤖 AI-Powered Insights** - Uses Groq's ultra-fast AI inference to explain _why_ each issue matters and how to fix it.
-- **📄 Auto Documentation** - Generates a `SCANNED.md` file summarizing your project structure, components, and getting started guide.
-- **📦 Dependency Management** - Interactive CLI to install, update, or check outdated packages.
-- **🌐 Cross-Platform** - Works on Windows, macOS, and Linux.
+- **Project Scanning** - Analyzes repositories for missing npm scripts, environment variables, dependencies, and TypeScript configuration discrepancies.
+- **AI-Powered Insights** - Utilizes Groq's high-performance inference engine to provide technical explanations and recommended solutions for detected issues.
+- **Automated Documentation** - Generates a structured `SCANNED.md` file summarizing project architecture, key components, and deployment procedures.
+- **Dependency Management** - Provides an interactive interface to install, update, and audit project packages.
+- **Cross-Platform Compatibility** - Fully supported on Windows, macOS, and Linux environments.
 
 ---
 
-## 📦 Installation
+## Installation
 
-### Global Installation (Recommended)
+### Global Installation
 
 ```bash
 npm install -g scanorepo
@@ -40,224 +36,112 @@ npm link
 
 ---
 
-## 🔑 Zero Configuration
+## Zero Configuration
 
-ScanoRepo works **instantly**!
+ScanoRepo is designed for immediate utility. Users are not required to provide personal API keys or manage complex environment variables. AI-driven analysis is facilitated through a secure proxy service maintained by the developer.
 
-Unlike other CLI tools, you don't need to sign up for API keys or set up environment variables. AI-powered insights are delivered through a secure proxy server maintained by the developer.
+### Operational Overview
 
-### How it works:
-
-1. You run a command.
-2. ScanoRepo sends the project metadata to a secure backend.
-3. The backend processes the request using Groq's high-performance models.
-4. You receive instant insights in your terminal.
+1. An audit command is initiated by the user.
+2. ScanoRepo transmits project metadata to a secure backend infrastructure.
+3. The backend processes the request using high-performance large language models.
+4. Actionable technical insights are returned directly to the terminal interface.
 
 ---
 
-## 🚀 Usage
+## Usage
 
-Navigate to any Node.js project and run:
+Navigate to the target Node.js project directory and execute:
 
 ```bash
-cd /path/to/your/project
 scanorepo <command>
 ```
 
 ### Available Commands
 
-| Command               | Description                                  |
-| --------------------- | -------------------------------------------- |
-| `scanorepo scan`      | Scan project for issues with AI explanations |
-| `scanorepo doc`       | Generate `SCANNED.md` documentation using AI |
-| `scanorepo deps`      | Interactive dependency management            |
-| `scanorepo check`     | Run full health check (scan + doc)           |
-| `scanorepo --help`    | Display help information                     |
-| `scanorepo --version` | Display version number                       |
+| Command               | Description                                                           |
+| --------------------- | --------------------------------------------------------------------- |
+| `scanorepo scan`      | Audit project for configuration issues with AI-assisted explanations. |
+| `scanorepo doc`       | Generate `SCANNED.md` documentation using AI analysis.                |
+| `scanorepo deps`      | Interactive dependency management and auditing.                       |
+| `scanorepo check`     | Comprehensive health check (Sequential execution of scan and doc).    |
+| `scanorepo --help`    | Display command reference.                                            |
+| `scanorepo --version` | Display current version information.                                  |
 
 ---
 
-## 📋 Command Details
+## Command Details
 
 ### `scanorepo scan`
 
-Scans your project for common issues:
+Performs a diagnostic audit of the project:
 
-- **Missing npm scripts** - Checks for `start`, `dev`, `build`, `test`
-- **Environment issues** - Detects missing `.env` files
-- **TypeScript errors** - Flags `.ts` files without `tsconfig.json`
-- **Dependency issues** - Checks if `node_modules` exists
-
-**Example Output:**
-
-```
-  ____                        ____
- / ___|  ___ __ _ _ __   ___ |  _ \ ___ _ __   ___
- \___ \ / __/ _` | '_ \ / _ \| |_) / _ \ '_ \ / _ \
-  ___) | (_| (_| | | | | (_) |  _ <  __/ |_) | (_) |
- |____/ \___\__,_|_| |_|\___/|_| \_\___| .__/ \___/
-                                       |_|
-✔ Scan complete!
-
---- Scan Results ---
-
-[!] Missing Scripts:
- - test
-
-AI Insight:
-**`npm test`** is essential because it automates verification,
-integrates with CI/CD pipelines, and standardizes testing workflow...
-```
+- **Script Analysis** - Verifies presence of standard scripts such as `start`, `dev`, `build`, and `test`.
+- **Environment Verification** - Detects absence of `.env` files and suggests templates.
+- **TypeScript Configuration** - Identifies `.ts` source files lacking an associated `tsconfig.json`.
+- **Dependency Integrity** - Validates the state of the `node_modules` directory.
 
 ### `scanorepo doc`
 
-Analyzes your project structure and generates a comprehensive `SCANNED.md` file containing:
+Analyzes the repository structure to produce a professional `SCANNED.md` file, providing:
 
-- Project overview
-- Key components and their purposes
-- Getting started instructions
+- Technical project overview.
+- Functional breakdown of key directories and files.
+- Standardized onboarding and installation instructions.
 
 ### `scanorepo deps`
 
-Opens an interactive menu:
+Initiates an interactive management interface:
 
-```
-? What would you like to do with dependencies?
-❯ Install missing dependencies
-  Update dependencies
-  Check outdated packages
-  Cancel
-```
-
-- Automatically detects npm vs yarn
-- Handles all package manager commands
-
-### `scanorepo check`
-
-Runs both `scan` and `doc` commands in sequence for a complete project audit.
+- Automatically detects preferred package managers (npm or yarn).
+- Facilitates secure package installation, updates, and outdated package auditing.
 
 ---
 
-## 📁 Project Structure
+## Operational Constraints
 
-```
-scanorepo/
-├── src/
-│   ├── index.ts           # CLI entry point
-│   ├── commands/
-│   │   ├── scan.ts        # Scan command
-│   │   ├── doc.ts         # Documentation command
-│   │   ├── deps.ts        # Dependencies command
-│   │   └── check.ts       # Full check command
-│   ├── services/
-│   │   ├── ai.ts          # Groq AI integration
-│   │   ├── scanner.ts     # Project scanning logic
-│   │   ├── summarizer.ts  # Project structure summarizer
-│   │   └── updater.ts     # Version update checker
-│   └── utils/
-│       └── logger.ts      # Colored console output
-├── dist/                   # Compiled JavaScript
-├── package.json
-├── tsconfig.json
-└── README.md
-```
+- **Node.js Environment** - ScanoRepo is optimized for projects containing a valid `package.json`.
+- **Inference Variability** - AI-generated explanations are intended for assistance and may vary between executions.
+- **Build Requirements** - When modifying the source, ensure a fresh build is generated via `npm run build`.
 
 ---
 
-## ⚠️ What NOT To Do
+## Development
 
-### ❌ Don't commit your API key
-
-Never commit your `.env` file or hardcode API keys in source code.
-
-```bash
-# Add to .gitignore
-.env
-```
-
-### ❌ Don't run on non-Node.js projects
-
-ScanoRepo is designed for JavaScript/TypeScript projects with `package.json`.
-
-### ❌ Don't expect deterministic AI outputs
-
-AI responses may vary between runs. The insights are meant to be helpful, not definitive.
-
-### ❌ Don't skip the build step
-
-After making changes, always rebuild:
+### Assembly
 
 ```bash
 npm run build
 ```
 
----
-
-## 🛠️ Development
-
-### Build the project
-
-```bash
-npm run build
-```
-
-### Run in development mode
+### Debugging
 
 ```bash
 npm run dev
 ```
 
-### Test locally without publishing
+### Local Testing
 
 ```bash
 npm link
 scanorepo scan
 ```
 
-### Unlink when done
+---
 
-```bash
-npm unlink -g scanorepo
-```
+## License
+
+This project is licensed under the MIT License. Refer to the [LICENSE](LICENSE) file for additional details.
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👤 Author
+## Author
 
 **Benjamin Onyia**
 
-- 🌐 Portfolio: [benjamin-onyia.vercel.app](https://benjamin-onyia.vercel.app/)
-- 💻 GitHub: [@classicManCode](https://github.com/classicManCode)
+- Portfolio: [benjamin-onyia.vercel.app](https://benjamin-onyia.vercel.app/)
+- GitHub: [classicManCode](https://github.com/classicManCode)
 
 ---
 
-## 🙏 Acknowledgments
-
-- [Groq](https://groq.com/) for ultra-fast AI inference
-- [Commander.js](https://github.com/tj/commander.js) for CLI framework
-- [Inquirer.js](https://github.com/SBoudrias/Inquirer.js) for interactive prompts
-- [Chalk](https://github.com/chalk/chalk) & [Ora](https://github.com/sindresorhus/ora) for beautiful terminal output
-
----
-
-<p align="center">
-  Made with ❤️ by <a href="https://benjamin-onyia.vercel.app/">Benjamin Onyia</a>
-</p>
+Developed by Benjamin Onyia.

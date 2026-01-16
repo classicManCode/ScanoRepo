@@ -1,10 +1,37 @@
 {
+  "name": "scanorepo",
+  "version": "1.0.0",
+  "description": "Cross-platform AI-powered CLI tool for project scanning and documentation",
+  "main": "dist/index.js",
+  "bin": {
+    "scanorepo": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev src/index.ts",
+    "scanorepo": "ts-node src/index.ts"
+  },
   "dependencies": {
     "@google/genai": "^1.37.0",
-    "dotenv": "^17.2.3",
-    "express": "^5.2.1",
+    "axios": "^1.13.2",
+    "chalk": "^4.1.2",
+    "commander": "^12.0.0",
+    "cross-spawn": "^7.0.3",
+    "dotenv": "^16.4.1",
+    "figlet": "^1.7.0",
+    "inquirer": "^8.2.6",
+    "ora": "^5.4.1",
+    "semver": "^7.6.0"
+  },
+  "devDependencies": {
+    "@types/cross-spawn": "^6.0.6",
+    "@types/figlet": "^1.5.8",
+    "@types/inquirer": "^9.0.7",
+    "@types/node": "^20.11.16",
+    "@types/semver": "^7.5.7",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.3.3"
   }
 }

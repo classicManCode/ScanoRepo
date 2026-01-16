@@ -19,7 +19,7 @@ export const generateExplanation = async (prompt: string): Promise<string> => {
 
   try {
     const result = await client.models.generateContent({
-      model: "gemini-1.5-flash",
+      model: "gemini-1.5-flash-001",
       contents: prompt,
     });
     // The new SDK exposes text as a getter property, not a method

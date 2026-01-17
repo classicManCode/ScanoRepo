@@ -26,21 +26,24 @@ export function TerminalDemo() {
       "Done!",
     ];
 
-    let currentIndex = 0;
-    const interval = setInterval(() => {
-      if (currentIndex >= output.length) {
-        clearInterval(interval);
-        setTimeout(() => {
+    let timeoutId: NodeJS.Timeout;
+
+    const typeLine = (index: number) => {
+      if (index >= output.length) {
+        timeoutId = setTimeout(() => {
           setLines([]);
-          currentIndex = 0; // Loop
+          timeoutId = setTimeout(() => typeLine(0), 100);
         }, 5000);
         return;
       }
-      setLines((prev) => [...prev, output[currentIndex]]);
-      currentIndex++;
-    }, 800);
 
-    return () => clearInterval(interval);
+      setLines((prev) => [...prev, output[index]]);
+      timeoutId = setTimeout(() => typeLine(index + 1), 800);
+    };
+
+    typeLine(0);
+
+    return () => clearTimeout(timeoutId);
   }, [started]);
 
   return (
@@ -63,29 +66,32 @@ export function TerminalDemo() {
               />
             </div>
           )}
-          {lines.map((line, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              className={cn(
-                "flex items-center gap-2",
-                line.startsWith(">") && "text-white font-bold",
-                line.includes("✔") && "text-green-400",
-                line.includes("⚠") && "text-yellow-400",
-                line.includes("ℹ") && "text-blue-400",
-              )}
-            >
-              {line.startsWith(">") ? (
-                <>
-                  <span className="text-green-500">$</span>
-                  <span>{line.substring(2)}</span>
-                </>
-              ) : (
-                <span>{line}</span>
-              )}
-            </motion.div>
-          ))}
+          {lines.map((line, i) => {
+            if (!line) return null;
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                className={cn(
+                  "flex items-center gap-2",
+                  line.startsWith(">") && "text-white font-bold",
+                  line.includes("✔") && "text-green-400",
+                  line.includes("⚠") && "text-yellow-400",
+                  line.includes("ℹ") && "text-blue-400",
+                )}
+              >
+                {line.startsWith(">") ? (
+                  <>
+                    <span className="text-green-500">$</span>
+                    <span>{line.substring(2)}</span>
+                  </>
+                ) : (
+                  <span>{line}</span>
+                )}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </div>

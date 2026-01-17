@@ -52,7 +52,7 @@ export function FluidGlass() {
             repeat: Infinity,
             repeatType: "reverse",
           }}
-          className="absolute -top-[20%] -left-[10%] h-[600px] w-[600px] rounded-full bg-primary blur-[100px] opacity-40 mix-blend-screen"
+          className="absolute -top-[20%] -left-[10%] h-[600px] w-[600px] rounded-full bg-primary blur-[80px] opacity-40 mix-blend-screen will-change-transform"
         />
         <motion.div
           animate={{
@@ -65,7 +65,7 @@ export function FluidGlass() {
             repeat: Infinity,
             repeatType: "reverse",
           }}
-          className="absolute top-[20%] -right-[10%] h-[500px] w-[500px] rounded-full bg-secondary blur-[100px] opacity-40 mix-blend-screen"
+          className="absolute top-[20%] -right-[10%] h-[500px] w-[500px] rounded-full bg-secondary blur-[80px] opacity-40 mix-blend-screen will-change-transform"
         />
         <motion.div
           animate={{
@@ -77,7 +77,7 @@ export function FluidGlass() {
             repeat: Infinity,
             repeatType: "reverse",
           }}
-          className="absolute bottom-[-10%] left-[20%] h-[700px] w-[700px] rounded-full bg-purple-900 blur-[120px] opacity-30 mix-blend-screen"
+          className="absolute bottom-[-10%] left-[20%] h-[700px] w-[700px] rounded-full bg-purple-900 blur-[100px] opacity-30 mix-blend-screen will-change-transform"
         />
       </div>
 

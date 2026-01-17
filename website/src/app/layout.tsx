@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "ScanoRepo | AI-Powered Project Scanning",
   description:
     "Secure, zero-config AI auditing for your codebase. Detect issues, generate docs, and manage dependencies.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -27,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >

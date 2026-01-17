@@ -31,6 +31,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="text-neutral-400 hover:text-white transition-colors"
+            aria-label="GitHub Profile"
           >
             <Github size={20} />
           </Link>

@@ -14,6 +14,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="text-neutral-500 hover:text-primary transition-colors"
+            aria-label="X (formerly Twitter) Profile"
           >
             <Twitter size={18} />
           </Link>
@@ -22,6 +23,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="text-neutral-500 hover:text-primary transition-colors"
+            aria-label="Threads Profile"
           >
             <AtSign size={18} />
           </Link>
@@ -30,6 +32,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="text-neutral-500 hover:text-white transition-colors"
+            aria-label="GitHub Profile"
           >
             <Github size={18} />
           </Link>
@@ -38,6 +41,7 @@ export function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             className="text-neutral-500 hover:text-white transition-colors"
+            aria-label="Personal Portfolio"
           >
             <Globe size={18} />
           </Link>

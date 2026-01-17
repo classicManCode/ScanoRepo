@@ -43,7 +43,7 @@ export default function AuthorPage() {
         <div className="glass-card rounded-3xl p-8 md:p-12">
           <div className="flex flex-col items-center gap-8 md:flex-row">
             <div className="relative h-40 w-40 shrink-0 overflow-hidden rounded-2xl bg-gradient-to-br from-primary to-secondary p-1">
-              <div className="h-full w-full rounded-[calc(1rem-4px)] bg-[#050505] flex items-center justify-center">
+              <div className="h-full w-full rounded-[calc(1rem-4px)] bg-black flex items-center justify-center">
                 {/* Placeholder for actual image if available, else initials */}
                 <span className="text-5xl font-bold text-white">BO</span>
               </div>

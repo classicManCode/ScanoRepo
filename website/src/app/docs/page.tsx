@@ -107,6 +107,7 @@ export default function DocsPage() {
                     <button
                       onClick={() => copyToClipboard(section.code, section.id)}
                       className="text-neutral-500 hover:text-white transition-colors"
+                      aria-label="Copy to clipboard"
                     >
                       {copied === section.id ? (
                         <Check size={16} className="text-green-500" />

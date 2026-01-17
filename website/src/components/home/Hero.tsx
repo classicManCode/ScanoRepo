@@ -45,7 +45,7 @@ export function Hero() {
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <div className="group relative">
-              <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-primary to-secondary opacity-30 blur transition duration-200 group-hover:opacity-75"></div>
+              <div className="remote-terminal absolute -inset-0.5 rounded-lg bg-gradient-to-r from-primary to-secondary opacity-30 blur transition duration-200 group-hover:opacity-75"></div>
               <div className="relative flex items-center rounded-lg bg-black px-6 py-3 text-sm font-mono text-neutral-300">
                 <span className="mr-2 text-primary">$</span>
                 npm i -g scanorepo

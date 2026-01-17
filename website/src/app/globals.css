@@ -2,14 +2,15 @@
 
 :root {
   --background: #050505;
-  --foreground: #ffffff;
-  --primary: #00f2ff;
-  --secondary: #7000ff;
+  --foreground: #ececec;
+  --primary: #84934a;
+  --secondary: #656d3f;
+  --accent: #492828;
   --surface: #0a0a0a;
 
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-highlight: rgba(255, 255, 255, 0.2);
+  --glass-border: rgba(236, 236, 236, 0.1);
+  --glass-bg: rgba(236, 236, 236, 0.05);
+  --glass-highlight: rgba(236, 236, 236, 0.2);
 }
 
 @theme inline {
@@ -17,6 +18,7 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
   --color-surface: var(--surface);
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
@@ -41,8 +43,8 @@ body {
 .glass-card {
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.05) 0%,
-    rgba(255, 255, 255, 0.01) 100%
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.02) 100%
   );
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);

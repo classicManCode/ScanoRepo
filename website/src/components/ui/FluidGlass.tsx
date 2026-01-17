@@ -16,7 +16,7 @@ export function FluidGlass() {
   if (!mounted) return null;
 
   return (
-    <div className="fixed inset-0 -z-10 h-full w-full overflow-hidden bg-black">
+    <div className="fixed inset-0 -z-10 h-full w-full overflow-hidden bg-[var(--background)]">
       <svg className="hidden">
         <defs>
           <filter id="fluid-filter">
@@ -52,7 +52,7 @@ export function FluidGlass() {
             repeat: Infinity,
             repeatType: "reverse",
           }}
-          className="absolute -top-[20%] -left-[10%] h-[600px] w-[600px] rounded-full bg-primary blur-[80px] opacity-40 mix-blend-screen will-change-transform"
+          className="absolute -top-[20%] -left-[10%] h-[600px] w-[600px] rounded-full bg-primary blur-[80px] opacity-60 mix-blend-multiply will-change-transform"
         />
         <motion.div
           animate={{
@@ -65,7 +65,7 @@ export function FluidGlass() {
             repeat: Infinity,
             repeatType: "reverse",
           }}
-          className="absolute top-[20%] -right-[10%] h-[500px] w-[500px] rounded-full bg-secondary blur-[80px] opacity-40 mix-blend-screen will-change-transform"
+          className="absolute top-[20%] -right-[10%] h-[500px] w-[500px] rounded-full bg-secondary blur-[80px] opacity-60 mix-blend-multiply will-change-transform"
         />
         <motion.div
           animate={{
@@ -77,12 +77,12 @@ export function FluidGlass() {
             repeat: Infinity,
             repeatType: "reverse",
           }}
-          className="absolute bottom-[-10%] left-[20%] h-[700px] w-[700px] rounded-full bg-purple-900 blur-[100px] opacity-30 mix-blend-screen will-change-transform"
+          className="absolute bottom-[-10%] left-[20%] h-[700px] w-[700px] rounded-full bg-[var(--primary)] blur-[100px] opacity-40 mix-blend-multiply will-change-transform"
         />
       </div>
 
       {/* Noise overlay for texture */}
-      <div className="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none mix-blend-overlay"></div>
+      <div className="absolute inset-0 opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] pointer-events-none mix-blend-overlay"></div>
     </div>
   );
 }

@@ -1,0 +1,31 @@
+
+> website@0.1.0 lint
+> eslint
+
+
+C:\Users\HP\OneDrive\Desktop\ScanoRepo\website\src\app\author\page.tsx
+  4:42  warning  'Mail' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\HP\OneDrive\Desktop\ScanoRepo\website\src\components\home\Hero.tsx
+  5:22  warning  'Terminal' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\HP\OneDrive\Desktop\ScanoRepo\website\src\components\ui\FluidGlass.tsx
+  10:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\HP\OneDrive\Desktop\ScanoRepo\website\src\components\ui\FluidGlass.tsx:10:5
+   8 |
+   9 |   useEffect(() => {
+> 10 |     setMounted(true);
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  11 |   }, []);
+  12 |
+  13 |   if (!mounted) return null;  react-hooks/set-state-in-effect
+
+✖ 3 problems (1 error, 2 warnings)
+

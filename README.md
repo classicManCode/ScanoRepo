@@ -4,6 +4,8 @@
 
 ScanoRepo is a cross-platform command-line utility built with Node.js and TypeScript. It is designed to audit JavaScript and TypeScript repositories for configuration issues and generate comprehensive project documentation using AI-driven insights.
 
+**Official Website:** [scano-repo-gui.vercel.app](https://scano-repo-gui.vercel.app/)
+
 ---
 
 ## Features
